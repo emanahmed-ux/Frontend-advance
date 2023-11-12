@@ -1,0 +1,17 @@
+<p>My Name is {{viewname}} and welcome to my task i hope get {{viewnumber}} from 10</p>
+
+<!--<h1>here method to change name {{changename()}}</h1>-->
+<h2>{{getname()}} {{getnumber()}}</h2>
+
+<img src="../imgs/quote5.png" alt="Quote Image"/>
+<form action="/action_page.php">
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname" [value]="getname()"><br>
+    <label for="fname">Last name:</label><br>
+    <input type="text" id="fname" name="fname" [value]="getnamee()"><br>
+    <label for="lname">Enter Number:</label><br>
+    <input type="text" id="lname" name="lname" [(ngModel)]="textdata"><br><br>
+    <label for="lname">Out Number:</label><br>
+    <input type="text" id="lname" name="lname" [value]="textdata"><br><br>
+    <input type="submit" value="clickme">
+  </form>
