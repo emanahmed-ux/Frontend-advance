@@ -9,6 +9,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SlidebarComponent } from './slidebar/slidebar.component';
 import { FormComponent } from './form/form.component';
 
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TableComponent } from './table/table.component';
 import { TablenComponent } from './tablen/tablen.component';
