@@ -1,0 +1,36 @@
+<p>table works!</p>
+
+<div class="container">
+  <h2>Data Table</h2>
+  <button class="btn btn-success" (click)="addData()">Add Data</button>
+  <table class="table mt-3 bg-light">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data">
+        <td>{{ item.id }}</td>
+        <td>
+          <span *ngIf="!isEditing || item.id !== selectedItem.id">{{ item.name }}</span>
+          <input *ngIf="isEditing && item.id === selectedItem.id" [(ngModel)]="selectedItem.name" class="form-control">
+        </td>
+        <td>
+          <span *ngIf="!isEditing || item.id !== selectedItem.id">{{ item.description }}</span>
+          <input *ngIf="isEditing && item.id === selectedItem.id" [(ngModel)]="selectedItem.description"
+            class="form-control">
+        </td>
+        <td>
+          <button *ngIf="!isEditing" (click)="editData(item)" class="btn btn-warning mr-2">Edit</button>
+          <button *ngIf="isEditing && item.id === selectedItem.id" (click)="saveData()"
+            class="btn btn-success mr-2">Save</button>
+          <button (click)="deleteData(item)" class="btn btn-danger">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
